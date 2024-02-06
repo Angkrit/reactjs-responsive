@@ -15,12 +15,21 @@ export const Header = ({ title }) => {
     color: #e7e7e7;
     margin: 100px 0;
 
+    .title {
+      padding-left: 30px;
+    }
+
     @media (max-width: ${Constants.lg}px) {
       margin: 70px 0 120px 0;
 
       .title {
         padding: 0 30px;
       }
+    }
+
+    @media (max-width: ${Constants.sm}px) {
+      margin-top: 30px;
+      font-size: 50px;
     }
   `;
 
@@ -38,11 +47,12 @@ export const Header = ({ title }) => {
   const Image = styled.div`
     position: absolute;
     width: 100%;
+    z-index: 2;
 
     img {
-      height: 70vw;
+      height: 50vw;
       max-height: 1000px;
-      translate: 5% -5%;
+      translate: 0% -5%;
     }
 
     .desktop {
@@ -71,7 +81,10 @@ export const Header = ({ title }) => {
     }
 
     @media (max-width: ${Constants.sm}px) {
-      position: relative;
+      img {
+        max-height: 280px;
+      }
+
       display: flex;
       justify-content: center;
 

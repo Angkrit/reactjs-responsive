@@ -22,7 +22,19 @@ export const Article = ({
     }
 
     .content {
-      padding-left: 25px;
+      padding-left: 120px;
+    }
+
+    @media (max-width: ${Constants.sm}px) {
+      padding: 0 20px;
+
+      .space {
+        display: none;
+      }
+
+      .content {
+        padding-left: 0;
+      }
     }
   `;
 
@@ -41,6 +53,14 @@ export const Article = ({
     border-radius: 5px;
     box-shadow: 0 23px 0 0 ${underlineColor};
     color: black;
+
+    @media (max-width: ${Constants.sm}px) {
+      margin-top: 5px;
+      font-size: 14px;
+      height: 4px;
+      width: 18px;
+      box-shadow: 0 18px 0 0 ${underlineColor};
+    }
   `;
 
   const TitleText = styled.div`
@@ -49,6 +69,10 @@ export const Article = ({
     font-size: 36px;
     letter-spacing: 1.5px;
     color: #c2c2c2;
+
+    @media (max-width: ${Constants.sm}px) {
+      font-size: 28px;
+    }
   `;
 
   const Content = styled.div`
@@ -57,15 +81,17 @@ export const Article = ({
     font-size: 20px;
     line-height: 28px;
 
-    @media (max-width: ${Constants.lg}px) {
-      font-size: 18px;
+    @media (max-width: ${Constants.sm}px) {
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: normal;
     }
   `;
 
   return (
     <ArticleStyled>
       <Container>
-        <Flex sm={1}></Flex>
+        <Flex sm={1} className="space"></Flex>
         <Flex sm={2} className="content">
           <Title>
             <TitleNumber>{number}</TitleNumber>

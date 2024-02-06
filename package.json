@@ -1,7 +1,7 @@
 {
   "name": "tri-petch-responsive",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,8 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "swiper": "^11.0.6"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.11.0",
