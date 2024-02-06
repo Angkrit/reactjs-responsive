@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Flex } from "./components/Flex";
 import { Container } from "./components/Container";
+import Constants from "./Constants";
 
 export const Article = ({
   number,
@@ -14,7 +15,15 @@ export const Article = ({
     display: flex;
     justify-content: center;
     background: ${background};
-    padding: 60px 0;
+    padding: 60px 30px;
+
+    @media (max-width: ${Constants.lg}px) {
+      padding: 40px;
+    }
+
+    .content {
+      padding-left: 25px;
+    }
   `;
 
   const Title = styled.div`
@@ -47,13 +56,17 @@ export const Article = ({
     margin-top: 20px;
     font-size: 20px;
     line-height: 28px;
+
+    @media (max-width: ${Constants.lg}px) {
+      font-size: 18px;
+    }
   `;
 
   return (
     <ArticleStyled>
       <Container>
-        <Flex></Flex>
-        <Flex>
+        <Flex sm={1}></Flex>
+        <Flex sm={2} className="content">
           <Title>
             <TitleNumber>{number}</TitleNumber>
             <TitleText>{title}</TitleText>

@@ -1,26 +1,16 @@
 import styled from "@emotion/styled";
 import { Article } from "./Article";
-import { Container } from "./components/Container";
-import { Flex } from "./components/Flex";
+import { Header } from "./Header";
+
+const Space = styled.div`
+  height: ${({ height }) => height || 100}px;
+`;
 
 function App() {
-  const Header = styled.header`
-    display: flex;
-    justify-content: center;
-    font-size: 90px;
-    text-transform: uppercase;
-    color: #e7e7e7;
-  `;
-
   return (
     <main>
       <section className="section athletes">
-        <Header>
-          <Container>
-            <Flex></Flex>
-            <Flex>Athletes</Flex>
-          </Container>
-        </Header>
+        <Header title="Athletes" />
         <Article
           number="01"
           title="Connection"
