@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styled from "@emotion/styled";
+import Article from "./Article";
+
+export const Container = styled.div`
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const Flex = styled.div`
+  flex: 1;
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
+  const Header = styled.header`
+    display: flex;
+    justify-content: center;
+    font-size: 90px;
+    text-transform: uppercase;
+    color: #e7e7e7;
+  `;
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main>
+      <section className="section athletes">
+        <Header>
+          <Container>
+            <Flex></Flex>
+            <Flex>Athletes</Flex>
+          </Container>
+        </Header>
+        <Article
+          number="01"
+          title="Connection"
+          content="Connect with coaches directly, you can ping coaches to view profile."
+        />
+        <Article
+          number="02"
+          title="Collaboration"
+          content="Work with other student athletes to  increase visability. When you share and like other players videos it will increase your visability as a player. This is the team work aspect to Surface 1."
+          background="#F5F4F9"
+        />
+        <Article
+          number="03"
+          title="Growth"
+          content="Resources and tools for you to get better as a student Athelte. Access to training classes, tutor sessions, etc "
+          background="#5E3DB3"
+          underlineColor="white"
+          contentColor="white"
+        />
+      </section>
+      <section className="section players"></section>
+    </main>
+  );
 }
 
-export default App
+export default App;
