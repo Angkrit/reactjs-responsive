@@ -1,16 +1,7 @@
 import styled from "@emotion/styled";
-import Article from "./Article";
-
-export const Container = styled.div`
-  width: 100%;
-  max-width: 1000px;
-  display: flex;
-  flex-direction: row;
-`;
-
-export const Flex = styled.div`
-  flex: 1;
-`;
+import { Article } from "./Article";
+import { Container } from "./components/Container";
+import { Flex } from "./components/Flex";
 
 function App() {
   const Header = styled.header`

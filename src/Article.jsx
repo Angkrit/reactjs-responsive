@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
-import { Container, Flex } from "./App";
+import { Flex } from "./components/Flex";
+import { Container } from "./components/Container";
 
-const Article = ({
+export const Article = ({
   number,
   title,
   content,
@@ -63,5 +64,3 @@ const Article = ({
     </ArticleStyled>
   );
 };
-
-export default Article;
