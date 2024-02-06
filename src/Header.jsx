@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 import { Container } from "./components/Container";
 import { Flex } from "./components/Flex";
+import Constants from "./Constants";
 import player1Desktop from "./assets/player1-desktop.png";
 import player1Tablet from "./assets/player1-tablet.png";
-import Constants from "./constants";
+import player1Mobile from "./assets/player1-mobile.png";
 
 export const Header = ({ title }) => {
   const HeaderStyled = styled.header`
@@ -16,17 +17,29 @@ export const Header = ({ title }) => {
 
     @media (max-width: ${Constants.lg}px) {
       margin: 70px 0 120px 0;
+
+      .title {
+        padding: 0 30px;
+      }
     }
   `;
 
   const Absolute = styled(Container)`
     position: absolute;
     width: 100%;
+
+    @media (max-width: ${Constants.sm}px) {
+      position: relative;
+      display: flex;
+      flex-direction: column-reverse;
+    }
   `;
 
   const Image = styled.div`
+    position: absolute;
+    width: 100%;
+
     img {
-      position: absolute;
       height: 70vw;
       max-height: 1000px;
       translate: 5% -5%;
@@ -36,6 +49,9 @@ export const Header = ({ title }) => {
       display: block;
     }
     .tablet {
+      display: none;
+    }
+    .mobile {
       display: none;
     }
 
@@ -53,6 +69,19 @@ export const Header = ({ title }) => {
         display: block;
       }
     }
+
+    @media (max-width: ${Constants.sm}px) {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      .tablet {
+        display: none;
+      }
+      .mobile {
+        display: block;
+      }
+    }
   `;
 
   return (
@@ -62,6 +91,7 @@ export const Header = ({ title }) => {
           <Image>
             <img src={player1Desktop} alt="football" className="desktop" />
             <img src={player1Tablet} alt="football" className="tablet" />
+            <img src={player1Mobile} alt="football" className="mobile" />
           </Image>
         </Flex>
         <Flex sm={2}>
