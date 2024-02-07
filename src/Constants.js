@@ -2,7 +2,7 @@ const Constants = {
   xl: 1920,
   frame: 1525,
   lg: 1310,
-  sm: 730,
+  sm: 760,
 };
 
 export default Constants;
