@@ -19,21 +19,23 @@ export const Header = ({
     margin: 100px 0;
 
     .title {
+      margin-top: 50px;
       padding-left: ${revert ? 120 : 60}px;
     }
 
     @media (max-width: ${Constants.lg}px) {
-      margin-top: ${revert ? 70 : 50}px;
+      margin: 50px 0 70px 0;
 
       .title {
         position: absolute;
+        margin-top: ${revert ? 15 : 0}px;
         padding-left: 30px;
         translate: 0;
       }
     }
 
     @media (max-width: ${Constants.sm}px) {
-      margin-top: ${revert ? 16 : 30}px;
+      margin-top: ${revert ? 5 : 25}px;
       font-size: 50px;
 
       .title {
@@ -79,7 +81,7 @@ export const Header = ({
     }
 
     @media (max-width: ${Constants.lg}px) {
-      translate: 0% ${revert ? -2 : 3}%;
+      translate: 0% ${revert ? 0 : 3}%;
 
       img {
         height: 100vw;
@@ -100,7 +102,7 @@ export const Header = ({
       display: flex;
       justify-content: center;
       position: absolute;
-      translate: 0 70px;
+      translate: 0 ${revert ? 85 : 70}px;
 
       img {
         max-height: ${revert ? 250 : 280}px;

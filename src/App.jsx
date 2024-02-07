@@ -23,7 +23,7 @@ const Main = styled.main`
   }
 
   .list.player {
-    margin-top: 102px;
+    margin-top: 120px;
   }
 
   .swiper {
@@ -46,6 +46,16 @@ const Main = styled.main`
     background: #5c3caf;
   }
 
+  @media (max-width: ${Constants.lg}px) {
+    .list.athlete {
+      margin-top: 120px;
+    }
+
+    .list.player {
+      margin-top: 110px;
+    }
+  }
+
   @media (max-width: ${Constants.sm}px) {
     .list {
       display: none;
@@ -62,7 +72,7 @@ const Main = styled.main`
       }
 
       &.player {
-        margin-top: 275px;
+        margin-top: 290px;
       }
     }
   }

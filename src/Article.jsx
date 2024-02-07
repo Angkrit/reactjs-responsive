@@ -97,7 +97,7 @@ export const Article = ({
     @media (max-width: ${Constants.lg}px) {
       font-size: 18px;
       padding-left: 20px;
-      padding-right: ${revert ? 50 : 30}px;
+      padding-right: ${revert ? 55 : 30}px;
     }
 
     @media (max-width: ${Constants.sm}px) {
