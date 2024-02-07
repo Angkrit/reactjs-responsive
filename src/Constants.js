@@ -1,5 +1,6 @@
 const Constants = {
-  xl: 1525,
+  xl: 1920,
+  frame: 1525,
   lg: 1310,
   sm: 730,
 };
