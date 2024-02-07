@@ -58,11 +58,11 @@ const Main = styled.main`
       background-color: #f5f4f9;
 
       &.athlete {
-        margin-top: 295px;
+        margin-top: 305px;
       }
 
       &.player {
-        margin-top: 265px;
+        margin-top: 275px;
       }
     }
   }
