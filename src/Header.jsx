@@ -75,7 +75,7 @@ export const Header = ({
     }
 
     @media (max-width: 1580px) {
-      translate: ${revert ? 5 : 10}% ${revert ? -10 : -3}%;
+      translate: ${revert ? 5 : 20}% ${revert ? -10 : -3}%;
     }
 
     @media (max-width: ${Constants.lg}px) {
