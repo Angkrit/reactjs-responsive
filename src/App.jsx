@@ -31,6 +31,7 @@ const Main = styled.main`
   }
 
   .swiper-pagination-bullet {
+    margin: 0 6px !important;
     width: 10px;
     height: 10px;
     background: #d8d8d8;
@@ -49,15 +50,15 @@ const Main = styled.main`
     .swiper {
       display: block;
       padding-top: 60px;
-      padding-bottom: 60px;
+      padding-bottom: 70px;
       background-color: #f5f4f9;
 
       &.athlete {
-        margin-top: 320px;
+        margin-top: 295px;
       }
 
       &.player {
-        margin-top: 285px;
+        margin-top: 265px;
       }
     }
   }
@@ -92,6 +93,7 @@ function App() {
                 background={null}
                 underlineColor="#603EBE"
                 contentColor="black"
+                numberColor="black"
               />
             </SwiperSlide>
           ))}
@@ -124,6 +126,7 @@ function App() {
                 background={null}
                 underlineColor="#603EBE"
                 contentColor="black"
+                numberColor="black"
               />
             </SwiperSlide>
           ))}

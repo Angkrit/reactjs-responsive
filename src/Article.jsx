@@ -17,10 +17,10 @@ export const Article = ({
     display: flex;
     justify-content: center;
     background: ${background};
-    padding: 65px 30px;
+    padding: 60px 28px;
 
     @media (max-width: ${Constants.lg}px) {
-      padding: 40px 0;
+      padding: 30px 0;
     }
 
     .content {
@@ -29,7 +29,7 @@ export const Article = ({
 
     @media (max-width: ${Constants.lg}px) {
       .content {
-        padding-left: 20px;
+        padding-left: ${revert ? 10 : 20}px;
       }
     }
 
@@ -97,7 +97,7 @@ export const Article = ({
     @media (max-width: ${Constants.lg}px) {
       font-size: 18px;
       padding-left: 20px;
-      padding-right: ${revert ? 50 : 35}px;
+      padding-right: ${revert ? 50 : 30}px;
     }
 
     @media (max-width: ${Constants.sm}px) {
