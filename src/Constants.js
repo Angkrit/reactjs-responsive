@@ -1,4 +1,5 @@
 const Constants = {
+  xl: 1525,
   lg: 1310,
   sm: 730,
 };

@@ -48,10 +48,17 @@ const Main = styled.main`
 
     .swiper {
       display: block;
-      margin-top: 255px;
       padding-top: 60px;
       padding-bottom: 60px;
       background-color: #f5f4f9;
+
+      &.athlete {
+        margin-top: 320px;
+      }
+
+      &.player {
+        margin-top: 285px;
+      }
     }
   }
 `;
@@ -76,7 +83,7 @@ function App() {
             clickable: true,
           }}
           modules={[Pagination]}
-          className="swiper"
+          className="swiper athlete"
         >
           {athletes.map((athlete) => (
             <SwiperSlide key={athlete.number}>
@@ -108,7 +115,7 @@ function App() {
             clickable: true,
           }}
           modules={[Pagination]}
-          className="swiper"
+          className="swiper player"
         >
           {players.map((player) => (
             <SwiperSlide key={player.number}>

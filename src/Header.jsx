@@ -23,11 +23,12 @@ export const Header = ({
     }
 
     @media (max-width: ${Constants.lg}px) {
-      margin: 70px 0 120px 0;
+      margin: 60px 0 120px 0;
 
       .title {
         position: absolute;
-        padding: 0 30px;
+        padding-left: 30px;
+        translate: ${revert ? 2 : -2}%;
       }
     }
 
@@ -50,14 +51,14 @@ export const Header = ({
   `;
 
   const Image = styled.div`
-    position: ${revert ? "relative" : "absolute"};
+    position: absolute;
     width: 100%;
     z-index: 2;
+    translate: ${revert ? -12 : -2}% ${revert ? -12 : -3}%;
 
     img {
-      height: 50vw;
+      height: 100vw;
       max-height: ${revert ? 815 : 950}px;
-      translate: ${revert ? -20 : -5}% ${revert ? -10 : -5}%;
     }
 
     .desktop {
@@ -71,11 +72,13 @@ export const Header = ({
     }
 
     @media (max-width: ${Constants.lg}px) {
+      translate: 0 ${revert ? -2 : 4}%;
+
       img {
-        translate: 0 ${revert ? 0 : 5}%;
-        height: 90vw;
-        max-height: ${revert ? 568 : 800}px;
+        max-height: ${revert ? 568 : 719}px;
       }
+
+      position: ${revert ? "relative" : "absolute"};
 
       .desktop {
         display: none;
@@ -86,12 +89,14 @@ export const Header = ({
     }
 
     @media (max-width: ${Constants.sm}px) {
-      img {
-        max-height: 280px;
-      }
-
       display: flex;
       justify-content: center;
+      position: absolute;
+      translate: 0 80px;
+
+      img {
+        max-height: ${revert ? 250 : 280}px;
+      }
 
       .tablet {
         display: none;

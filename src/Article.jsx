@@ -29,15 +29,20 @@ export const Article = ({
 
     @media (max-width: ${Constants.lg}px) {
       .content {
-        padding-left: 15px;
+        padding-left: 20px;
       }
     }
 
     @media (max-width: ${Constants.sm}px) {
-      padding: 0 20px;
+      padding: 0;
 
       .space {
         display: none;
+      }
+
+      .content {
+        padding-left: 0px;
+        padding-right: 0px;
       }
     }
   `;
@@ -99,6 +104,7 @@ export const Article = ({
       margin-top: 10px;
       font-size: 15px;
       line-height: normal;
+      padding: 0 20px;
     }
   `;
 
