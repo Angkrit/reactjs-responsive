@@ -33,7 +33,7 @@ export const Header = ({
     }
 
     @media (max-width: ${Constants.sm}px) {
-      margin-top: 30px;
+      margin-top: ${revert ? 16 : 30}px;
       font-size: 50px;
 
       .title {
