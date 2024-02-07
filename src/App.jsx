@@ -18,8 +18,12 @@ import player2Tablet from "./assets/player2-tablet.png";
 import player2Mobile from "./assets/player2-mobile.png";
 
 const Main = styled.main`
-  .list {
+  .list.athlete {
     margin-top: 120px;
+  }
+
+  .list.player {
+    margin-top: 102px;
   }
 
   .swiper {
@@ -74,7 +78,7 @@ function App() {
           tabletImage={player1Tablet}
           mobileImage={player1Mobile}
         />
-        <div className="list">
+        <div className="list athlete">
           {athletes.map((athlete) => (
             <Article key={athlete.number} {...athlete} />
           ))}
@@ -107,7 +111,7 @@ function App() {
           tabletImage={player2Tablet}
           mobileImage={player2Mobile}
         />
-        <div className="list">
+        <div className="list player">
           {players.map((player) => (
             <Article key={player.number} {...player} revert={true} />
           ))}

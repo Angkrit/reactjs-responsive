@@ -23,7 +23,7 @@ export const Header = ({
     }
 
     @media (max-width: ${Constants.lg}px) {
-      margin: 50px 0 120px 0;
+      margin-top: ${revert ? 70 : 50}px;
 
       .title {
         position: absolute;
@@ -57,7 +57,7 @@ export const Header = ({
   const Image = styled.div`
     position: relative;
     width: 100%;
-    translate: ${revert ? 6 : -2}% ${revert ? -10 : -3}%;
+    translate: ${revert ? 6 : -2}% ${revert ? -6 : 1}%;
 
     img {
       height: ${revert ? 50 : 60}vw;
@@ -79,7 +79,7 @@ export const Header = ({
     }
 
     @media (max-width: ${Constants.lg}px) {
-      translate: 0% ${revert ? -2 : 4}%;
+      translate: 0% ${revert ? -2 : 3}%;
 
       img {
         height: 100vw;
@@ -117,7 +117,7 @@ export const Header = ({
 
   return (
     <HeaderStyled>
-      <Absolute style={{ translate: "0 -10px", zIndex: 2 }}>
+      <Absolute style={{ translate: "0 -5%", zIndex: 2 }}>
         <Flex sm={1}>
           <Image>
             <img src={desktopImage} alt="football" className="desktop" />

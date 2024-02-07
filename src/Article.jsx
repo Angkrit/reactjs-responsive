@@ -17,7 +17,7 @@ export const Article = ({
     display: flex;
     justify-content: center;
     background: ${background};
-    padding: 60px 28px;
+    padding: 61px 28px;
 
     @media (max-width: ${Constants.lg}px) {
       padding: 30px 0;
