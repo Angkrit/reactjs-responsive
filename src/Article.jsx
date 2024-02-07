@@ -10,19 +10,27 @@ export const Article = ({
   underlineColor = "#603ebe",
   background = "white",
   contentColor = "black",
+  numberColor = "black",
+  revert = false,
 }) => {
   const ArticleStyled = styled.article`
     display: flex;
     justify-content: center;
     background: ${background};
-    padding: 60px 30px;
+    padding: 65px 30px;
 
     @media (max-width: ${Constants.lg}px) {
-      padding: 40px;
+      padding: 40px 0;
     }
 
     .content {
       padding-left: 120px;
+    }
+
+    @media (max-width: ${Constants.lg}px) {
+      .content {
+        padding-left: 15px;
+      }
     }
 
     @media (max-width: ${Constants.sm}px) {
@@ -31,15 +39,15 @@ export const Article = ({
       .space {
         display: none;
       }
-
-      .content {
-        padding-left: 0;
-      }
     }
   `;
 
   const Title = styled.div`
     display: flex;
+
+    @media (max-width: ${Constants.lg}px) {
+      padding-left: 20px;
+    }
   `;
 
   const TitleNumber = styled.div`
@@ -52,7 +60,7 @@ export const Article = ({
     background: transparent;
     border-radius: 5px;
     box-shadow: 0 23px 0 0 ${underlineColor};
-    color: black;
+    color: ${numberColor};
 
     @media (max-width: ${Constants.sm}px) {
       margin-top: 5px;
@@ -81,6 +89,12 @@ export const Article = ({
     font-size: 20px;
     line-height: 28px;
 
+    @media (max-width: ${Constants.lg}px) {
+      font-size: 18px;
+      padding-left: 20px;
+      padding-right: ${revert ? 50 : 35}px;
+    }
+
     @media (max-width: ${Constants.sm}px) {
       margin-top: 10px;
       font-size: 15px;
@@ -90,7 +104,7 @@ export const Article = ({
 
   return (
     <ArticleStyled>
-      <Container>
+      <Container revert={revert}>
         <Flex sm={1} className="space"></Flex>
         <Flex sm={2} className="content">
           <Title>

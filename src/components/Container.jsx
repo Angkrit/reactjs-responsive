@@ -4,5 +4,5 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1535px;
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ revert }) => (revert ? "row-reverse" : "row")};
 `;

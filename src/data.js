@@ -22,3 +22,28 @@ export const athletes = [
     contentColor: "white",
   },
 ];
+
+export const players = [
+  {
+    number: "01",
+    title: "Connection",
+    content:
+      "Connect with talented athlete directly, you can watch their skills through video showreels directly from Surface 1.",
+  },
+  {
+    number: "02",
+    title: "Collaboration",
+    content:
+      "Work with recruiter to increase your chances of finding talented athlete.",
+    background: "#F5F4F9",
+  },
+  {
+    number: "03",
+    title: "Growth",
+    content: "Save your time, recruit proper athlets for your team.",
+    background: "#090C35",
+    underlineColor: "white",
+    contentColor: "white",
+    numberColor: "#8F6BE8",
+  },
+];

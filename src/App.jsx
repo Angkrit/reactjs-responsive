@@ -6,10 +6,22 @@ import { Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { athletes } from "./data";
+import { athletes, players } from "./data";
 import Constants from "./Constants";
 
+import player1Desktop from "./assets/player1-desktop.png";
+import player1Tablet from "./assets/player1-tablet.png";
+import player1Mobile from "./assets/player1-mobile.png";
+
+import player2Desktop from "./assets/player2-desktop.png";
+import player2Tablet from "./assets/player2-tablet.png";
+import player2Mobile from "./assets/player2-mobile.png";
+
 const Main = styled.main`
+  .list {
+    margin-top: 120px;
+  }
+
   .swiper {
     display: none;
   }
@@ -48,7 +60,12 @@ function App() {
   return (
     <Main>
       <section className="section athletes">
-        <Header title="Athletes" />
+        <Header
+          title="Athletes"
+          desktopImage={player1Desktop}
+          tabletImage={player1Tablet}
+          mobileImage={player1Mobile}
+        />
         <div className="list">
           {athletes.map((athlete) => (
             <Article key={athlete.number} {...athlete} />
@@ -73,7 +90,38 @@ function App() {
           ))}
         </Swiper>
       </section>
-      <section className="section players"></section>
+      <section className="section players">
+        <Header
+          title="Players"
+          revert={true}
+          desktopImage={player2Desktop}
+          tabletImage={player2Tablet}
+          mobileImage={player2Mobile}
+        />
+        <div className="list">
+          {players.map((player) => (
+            <Article key={player.number} {...player} revert={true} />
+          ))}
+        </div>
+        <Swiper
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="swiper"
+        >
+          {players.map((player) => (
+            <SwiperSlide key={player.number}>
+              <Article
+                {...player}
+                background={null}
+                underlineColor="#603EBE"
+                contentColor="black"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
     </Main>
   );
 }

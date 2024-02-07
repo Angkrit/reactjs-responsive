@@ -2,11 +2,14 @@ import styled from "@emotion/styled";
 import { Container } from "./components/Container";
 import { Flex } from "./components/Flex";
 import Constants from "./Constants";
-import player1Desktop from "./assets/player1-desktop.png";
-import player1Tablet from "./assets/player1-tablet.png";
-import player1Mobile from "./assets/player1-mobile.png";
 
-export const Header = ({ title }) => {
+export const Header = ({
+  title,
+  revert = false,
+  desktopImage,
+  tabletImage,
+  mobileImage,
+}) => {
   const HeaderStyled = styled.header`
     display: flex;
     justify-content: center;
@@ -16,13 +19,14 @@ export const Header = ({ title }) => {
     margin: 100px 0;
 
     .title {
-      padding-left: 30px;
+      padding-left: ${revert ? 120 : 60}px;
     }
 
     @media (max-width: ${Constants.lg}px) {
       margin: 70px 0 120px 0;
 
       .title {
+        position: absolute;
         padding: 0 30px;
       }
     }
@@ -35,6 +39,7 @@ export const Header = ({ title }) => {
 
   const Absolute = styled(Container)`
     position: absolute;
+    flex-direction: ${revert ? "row-reverse" : "row"};
     width: 100%;
 
     @media (max-width: ${Constants.sm}px) {
@@ -45,14 +50,14 @@ export const Header = ({ title }) => {
   `;
 
   const Image = styled.div`
-    position: absolute;
+    position: ${revert ? "relative" : "absolute"};
     width: 100%;
     z-index: 2;
 
     img {
       height: 50vw;
-      max-height: 1000px;
-      translate: 0% -5%;
+      max-height: ${revert ? 815 : 950}px;
+      translate: ${revert ? -20 : -5}% ${revert ? -10 : -5}%;
     }
 
     .desktop {
@@ -67,9 +72,9 @@ export const Header = ({ title }) => {
 
     @media (max-width: ${Constants.lg}px) {
       img {
-        translate: 0 5%;
+        translate: 0 ${revert ? 0 : 5}%;
         height: 90vw;
-        max-height: 800px;
+        max-height: ${revert ? 568 : 800}px;
       }
 
       .desktop {
@@ -102,9 +107,9 @@ export const Header = ({ title }) => {
       <Absolute>
         <Flex sm={1}>
           <Image>
-            <img src={player1Desktop} alt="football" className="desktop" />
-            <img src={player1Tablet} alt="football" className="tablet" />
-            <img src={player1Mobile} alt="football" className="mobile" />
+            <img src={desktopImage} alt="football" className="desktop" />
+            <img src={tabletImage} alt="football" className="tablet" />
+            <img src={mobileImage} alt="football" className="mobile" />
           </Image>
         </Flex>
         <Flex sm={2}>
