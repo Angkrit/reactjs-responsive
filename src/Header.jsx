@@ -122,9 +122,17 @@ export const Header = ({
       <Absolute style={{ translate: "0 -5%", zIndex: 2 }}>
         <Flex sm={1}>
           <Image>
-            <img src={desktopImage} alt="football" className="desktop" />
-            <img src={tabletImage} alt="football" className="tablet" />
-            <img src={mobileImage} alt="football" className="mobile" />
+            <picture>
+              <source
+                media={`(min-width: ${Constants.lg + 1}px)`}
+                srcSet={desktopImage}
+              />
+              <source
+                media={`(min-width: ${Constants.sm + 1}px)`}
+                srcSet={tabletImage}
+              />
+              <img src={mobileImage} alt="football player" />
+            </picture>
           </Image>
         </Flex>
         <Flex sm={2}>
