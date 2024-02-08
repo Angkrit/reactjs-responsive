@@ -23,6 +23,12 @@ export const Header = ({
       padding-left: ${revert ? 120 : 60}px;
     }
 
+    @media (max-width: ${Constants.frame}px) {
+      .title {
+        padding-left: ${revert ? 140 : 60}px;
+      }
+    }
+
     @media (max-width: ${Constants.lg}px) {
       margin: 50px 0 70px 0;
 
