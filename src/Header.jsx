@@ -128,10 +128,17 @@ export const Header = ({
                 srcSet={desktopImage}
               />
               <source
-                media={`(min-width: ${Constants.sm + 1}px)`}
+                media={`(min-width: ${Constants.sm + 1}px) and (max-width: ${
+                  Constants.lg
+                }px)`}
                 srcSet={tabletImage}
               />
-              <img src={mobileImage} alt="football player" />
+              <source
+                media={`(max-width: ${Constants.sm}px)`}
+                srcSet={mobileImage}
+              />
+
+              <img alt="football player" />
             </picture>
           </Image>
         </Flex>
