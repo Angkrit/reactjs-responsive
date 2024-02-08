@@ -72,16 +72,6 @@ export const Header = ({
       max-height: ${revert ? 815 : 950}px;
     }
 
-    .desktop {
-      display: block;
-    }
-    .tablet {
-      display: none;
-    }
-    .mobile {
-      display: none;
-    }
-
     @media (max-width: 1580px) {
       translate: ${revert ? 5 : 20}% ${revert ? -10 : -3}%;
     }
@@ -95,13 +85,6 @@ export const Header = ({
       }
 
       position: ${revert ? "relative" : "absolute"};
-
-      .desktop {
-        display: none;
-      }
-      .tablet {
-        display: block;
-      }
     }
 
     @media (max-width: ${Constants.sm}px) {
@@ -112,13 +95,6 @@ export const Header = ({
 
       img {
         max-height: ${revert ? 250 : 280}px;
-      }
-
-      .tablet {
-        display: none;
-      }
-      .mobile {
-        display: block;
       }
     }
   `;
